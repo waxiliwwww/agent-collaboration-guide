@@ -1,0 +1,4 @@
+interface:
+  display_name: "协作规约"
+  short_description: "先澄清使用预期，再做最简完整实现，持续接续并以证据验收"
+  default_prompt: "请使用 $agent-collaboration-guide 帮我澄清预期、选择最简完整方案，并按已确认范围执行和验收。"

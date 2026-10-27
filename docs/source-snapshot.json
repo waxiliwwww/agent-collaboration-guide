@@ -1,0 +1,14 @@
+{
+  "source_version": "1.1.0",
+  "source_date": "2026-10-26",
+  "public_skill_version": "0.1.0",
+  "protected_principles_normalized_sha256": "5f6424fbd5250d759b82ec63f6927c2e27865c2008bfeaf31d8519690ac6fef2",
+  "source_files": {
+    "README.md": "69b352e3473fe00ffd199c65fcbc8f01e51ce3cec4e5d733a129eb3702bef1a1",
+    "通用设计理念.md": "2faef71416a423a55d9fef6595f9abbc21817509904e30fc7d5725f4fd6ca7d6",
+    "场景指南/文档与写作.md": "2e7aa6b351e4e9596ee3f41ed7d213e694c1fb4c08d0625ac27261bbe8a46325",
+    "场景指南/代码与分支.md": "a296a9bb31a444327c032f0aa488bcfcb33e6e5039376b5fddae78d05aeb9069",
+    "场景指南/PPT与演讲汇报.md": "bda97179232ae5d5ab9909d2b138cf544d9b25db773e9d49ac997c6dbf4c8961"
+  },
+  "adaptation": "Portable skill entry; references rerouted; local environment pointers removed; historical principles and table preserved except link targets."
+}
