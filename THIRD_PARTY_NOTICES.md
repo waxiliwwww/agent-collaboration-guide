@@ -10,6 +10,8 @@
 
 ## 概念参考与比较材料
 
+- **prove-it**：维护者提供的本地技能，作为测试有效性和证据交付的方法参考；当前没有可核对的公开来源链接。本公开版仅以独立措辞概括，不分发该技能原文或将其称为已确认许可的第三方依赖。
+
 - **Matt Pocock / skills — grill-with-docs**：访谈与术语建模思路。原始参考版本为 [`49dd158d1076134a641b33efb035946536778336`](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/engineering/grill-with-docs)，原项目为 [MIT](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/LICENSE)，Copyright (c) 2026 Matt Pocock。既有使用环境中对该技能的本地改良不作为本公开包的运行依赖。
 - **GitHub / Spec Kit**：规格和可组合工作过程参考；[项目](https://github.com/github/spec-kit)、[MIT 许可](https://github.com/github/spec-kit/blob/main/LICENSE)。
 - **Fission AI / OpenSpec**：变更提案、规格与任务联动参考；[项目](https://github.com/Fission-AI/OpenSpec)、[MIT 许可](https://github.com/Fission-AI/OpenSpec/blob/main/LICENSE)。

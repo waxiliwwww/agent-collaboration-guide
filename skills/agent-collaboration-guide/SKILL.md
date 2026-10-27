@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Clarify ambiguous goals, preserve agreed scope across turns, and verify usable outcomes. Use when the user requests a collaboration agreement or a multi-step task has consequential unresolved choices; keep already-clear small edits lightweight.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # 协作规约
@@ -40,7 +40,7 @@ metadata:
 
 从原始请求、已对齐的使用预期及有效变更提出验收问题，重新打开实际成果，沿用户从入口到结果的完整过程核对正常、必要异常与既有能力。关键验收由未参与该部分实施者按原始依据复核；无法取得所需复核就说明，不自行视为已通过。
 
-测试对应具体场景、风险与预期：先查局部正常、失败和必要边界，交接或集成时再查受影响组合；全量回归沿项目发布或 PR 的有效约定安排。复用同版本、同条件且仍有效的证据，只为变化、失败或不足补测，不按数量和篇幅证明完成。
+用例从预期行为与风险设计，说明目的、输入或操作及可观察结果，覆盖正常、关键失败和必要边界；不照抄当前输出作答案，不用替身替掉被测关键能力。优先复用现有检查，先局部、后受影响组合；全量沿项目发布或 PR 约定安排。按风险用原问题或代表反例验证关键检查确能报错，界面按需留实际操作与截图证据。兼顾执行、环境准备、调用费用和维护开销，复用仍有效的证据，只为变化、失败或不足补测，预期已覆盖且证据充分就停止。
 
 事实、推断、建议和未知分清，关键结论有来源、版本、条件及实际输出。程序成功、AI 复核、实际使用、人工验收和发布分别报告，缺失或跳过的必需检查不能算通过。交付简述做成什么、怎样使用、验证到哪和还差什么。
 
@@ -50,5 +50,6 @@ metadata:
 - 修改代码、使用工作树、合并分支或提交与更新 PR：读 [code-and-branches.md](references/code-and-branches.md)。
 - 制作 PPT 或演讲汇报：读 [presentations.md](references/presentations.md)。
 - 需要理解方法形成背景：参考 [13 条原始理念](references/principles-original.md)，无需逐条打卡。
+- 维护或质疑协作方法时，参考 [经验与观点](references/experience.md)；其中观点不是新增执行指令。
 
 只读相关场景，项目已有规范与记录继续使用。本技能不安装运行服务，也不提供工具拦截或自动审批。
