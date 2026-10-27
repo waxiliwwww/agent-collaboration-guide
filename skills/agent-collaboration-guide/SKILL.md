@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Clarify ambiguous goals, preserve agreed scope across turns, and verify usable outcomes. Use when the user requests a collaboration agreement or a multi-step task has consequential unresolved choices; keep already-clear small edits lightweight.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # 协作规约
