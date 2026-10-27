@@ -1,7 +1,7 @@
 {
   "source_version": "1.2.0",
   "source_date": "2026-10-27",
-  "public_skill_version": "0.2.1",
+  "public_skill_version": "0.2.2",
   "protected_principles_normalized_sha256": "5f6424fbd5250d759b82ec63f6927c2e27865c2008bfeaf31d8519690ac6fef2",
   "source_files": {
     "README.md": "93d12d59c740aee62ccdeba800985cc959a0cf89c82fe6158aadfb213eb739a6",
