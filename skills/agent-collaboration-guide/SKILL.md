@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Keep human-agent work aligned with the user's decisions, complete the agreed scope, and verify usable results. Use when adopted as a default collaboration guide or when a task needs clarification, decision continuity, or independent review; keep clear small tasks lightweight.
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # 协作规约
