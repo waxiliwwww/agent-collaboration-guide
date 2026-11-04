@@ -57,6 +57,8 @@ $skill-installer 请从 https://github.com/waxiliwwww/agent-collaboration-guide
 
 已有 Plan、规格和决定直接沿用，不重复询问或另建平行记录。用户决定与 agent 的关键取舍沿项目现有依据保存；具体落位、范围、替换和独立审计见[决策与复核](skills/agent-collaboration-guide/references/decisions-and-review.md)。
 
+协作也包括[双向校准](skills/agent-collaboration-guide/references/decisions-and-review.md#主动理解与双向校准)：从实际问题理解目标和卡点，用事实、替代与反例帮助用户补足判断，再根据反馈修正；通用方法留在技能，个人观察与待核实候选留在本地，不自动变成长期偏好。
+
 ## 为什么做成 Skill
 
 Skill 提供可发现的名字、适用描述、明确调用方式和按需加载的参考材料；`AGENTS.md` 适合承载项目或长期默认约定。可以按需使用技能，也可以在项目指导中约定何时采用它。[技能机制](https://learn.chatgpt.com/docs/build-skills)、[AGENTS.md 的适用范围](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
@@ -90,7 +92,7 @@ skills/agent-collaboration-guide/
 docs/                       面向使用者的说明、例子与验证边界
 ```
 
-本项目最初适配自历史协作规约 **1.2.0**，该母本现已退役归档。当前技能发行 **0.4.0**，从 **0.1.0** 开始编号；此后以本仓库的技能及参考材料为唯一维护来源，安装目录是可更新的发行副本。更新时保留本地适配并核对版本，不再回写或恢复旧母本。[修订记录](CHANGELOG.md)
+本项目最初适配自历史协作规约 **1.2.0**，该母本现已退役归档。当前技能发行 **0.6.0**，从 **0.1.0** 开始编号；此后以本仓库的技能及参考材料为唯一维护来源，安装目录是可更新的发行副本。更新时保留本地适配并核对版本，不再回写或恢复旧母本。[修订记录](CHANGELOG.md)
 
 欢迎用具体任务反馈：原始预期、智能体实际做法、发生的偏差，以及一条规则是否真正改变了行为。优先修正触发、重复和冲突；增加新条款需要说明现有要求为何不足。
 
