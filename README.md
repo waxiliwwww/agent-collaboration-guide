@@ -1,101 +1,55 @@
 # Agent Collaboration Guide · 协作规约
 
-**让智能体先与你对齐要做成什么，再从最简完整方案开始，把已确认的事做完、验清，并在下一轮接着做。**
+一个指导性 Agent Skill，帮助人和智能体固定目标与范围、解释复杂机制、沿真实交接完成工作，并从明确反馈中改进下一次处理。适合默认协作、长任务接续、技术文档、开发验证和重要结果复核；清楚的小请求保持轻量。
 
-A lightweight Agent Skill for aligning expectations, preserving agreed scope, and delivering usable results with evidence.
+**唯一使用入口：[SKILL.md](skills/agent-collaboration-guide/SKILL.md)。** 入口直接给出能力、适用边界、主干方法和场景直达表；不用先读项目说明、历史或全部参考才能决定是否有用。README 只负责安装与维护定位。
 
-这个项目来自持续的人机协作实践：用户起初往往只有一个模糊想法；智能体却容易过早定方案，写出大量计划，最后交付一个“机制齐全、使用过程没走通”的结果。增加规则也未必有用，规则过长、相互重复，反而会让执行者丢失重点。
+## 安装与更新
 
-这里提供一个可安装的 **Agent Skill**：通用方法集中在一个短入口，决策与复核、写作、测试、代码与分支、PPT 的特殊要求按需读取。项目关注用户与智能体怎样形成共识、保持方向并判断完成，适用于开发、调研、设计和文档工作。
+从本仓库取得 `skills/agent-collaboration-guide`，安装到宿主的技能目录。支持 Codex、DSH 等能读取 Agent Skill 的环境，具体发现与权限行为以宿主为准，不承诺自动加载效果。
 
-## 一分钟开始
+使用包内更新器，避免删除整个旧安装而丢失本地配置：
 
-在支持 `skill-installer` 的 Codex 中输入：
-
-```text
-$skill-installer 请从 https://github.com/waxiliwwww/agent-collaboration-guide
-安装 skills/agent-collaboration-guide 目录中的技能。
+```bash
+python3 skills/agent-collaboration-guide/scripts/update_install.py \
+  skills/agent-collaboration-guide /你的技能目录/agent-collaboration-guide --init-local
 ```
 
-安装后使用：
+首次创建缺失的 `local/preferences.md`；更新时同样执行，已有私有内容保留。先预览可加 `--dry-run`。脚本只复制公共文件、跳过源 `local/`，不删除目标整树，也不读取或替换其中的私有数据。更新失败如实报告，需重新检查完成状态。
+
+公共方法与私有偏好分工如下：
 
 ```text
-请用 $agent-collaboration-guide 帮我改进这项工作。
-先了解现状和我希望怎样使用，比较可复用方案，
-把推荐、主要取舍和完成条件讲清楚，再按已确认范围推进。
+agent-collaboration-guide/
+├── SKILL.md                 唯一使用入口与通用主干
+├── references/              按场景读取的扩展
+├── scripts/update_install.py 保留私有目录的公开文件更新器
+├── agents/openai.yaml       宿主界面元数据
+└── local/                   安装后私有；公开源不包含
+    ├── preferences.md       当前个人选择与按需索引
+    └── …                    项目、场景和历史，确有需要才建立
 ```
 
-也可以把仓库中的 [`skills/agent-collaboration-guide`](skills/agent-collaboration-guide) 文件夹完整复制到目标项目的 `.agents/skills/`。该位置是 Codex 的项目技能目录；其他宿主按自己的技能发现方式安装。若已有同名技能，应先保留原版本再更新。[官方技能说明](https://learn.chatgpt.com/docs/build-skills)
+外置配置仍可显式指定。迁移已有配置先备份、对照有效项，旧入口改指针，不保留两份独立真源。常驻入口只加载当前有效选择；历史、案例和项目细节按需读取。[配置与更新细则](skills/agent-collaboration-guide/references/local-profile.md)
 
-只有 Markdown 阅读能力的智能体，也可以直接读取 [`SKILL.md`](skills/agent-collaboration-guide/SKILL.md)。公开包不依赖维护者的电脑路径或其他技能。
+## 如何越用越合适
 
-交付格式遵循用户明确要求，并沿用适用的已配置偏好、项目模板与仓库约定；没有既定选择时，依据读者用途、交付渠道和维护条件选择。仅对影响结果且需用户判断的未决取舍提问，不重复确认已有选择。
+初次采用 → 读取当前有效偏好 → 按任务执行 → 明确纠正及时写回 → 相关任务回用 → 复核实际效果 → 提炼可复用方法、清理重复。
 
-## 希望改变什么
+本次决定、项目约束、个人偏好与推断分开保存；同类反复偏差先查规则、触发、执行和检查哪一处失效。通用候选脱敏并说明边界和成本后再进入公共技能，个人路径、固定格式及授权不随之公开。详见入口和[反馈闭环](skills/agent-collaboration-guide/references/decisions-and-review.md)。
 
-| 常见协作问题 | 本项目引导智能体采取的行动 |
-| --- | --- |
-| 需求还模糊，智能体已经开工 | 从完成后的一次实际使用开始提问；查事实、给选项和推荐，再复述确认 |
-| 用户要做决定，却只收到一个问题 | 先交代背景、风险、代价和推荐，让用户判断真正需要拍板的取舍 |
-| 为了“完整”一开始就全都要 | 规划时考虑长期场景，实施时先满足本轮目标；未来功能不自动进入范围 |
-| 为了“最简”省掉必要能力 | 以已确认功能、适用范围和完成条件为底线，保留必要正确性与失败处理 |
-| 多轮以后只记得最后一个要求 | 复用一份当前任务依据和持久待办，明确变更写回，恢复时从未完成事项继续 |
-| 用户敲定的内容被后续建议覆盖 | 保存决定的来源、范围与状态，相关修改前重读，明确替换关系与冲突处置 |
-| 常见入口或模块衔接只做了一半 | 结合实际入口、生命周期、消费者与失败恢复检查，补齐已确认范围的完整通路 |
-| 测试通过，但用户仍然用不了 | 沿真实入口到结果检查，分别说明代码检查、实际使用、独立复核和人工验收 |
-| 合并时把另一边的有效改动覆盖了 | 逐步解析冲突及关联改动，保全双方有效意图，实质取舍拿不准就问 |
+场景扩展是按需读取的文件，不新增插件运行服务；可选制作／写作技能是独立依赖，只有任务适用时才采用。[推荐资源](skills/agent-collaboration-guide/references/recommended-skills.md)
 
-这些是**设计目标和方法取向**。是否减少返工、等待和用户介入，需要在你的任务中验证。
+## 维护与证据
 
-## 核心方法：三步，按任务深度使用
+当前版本 **0.7.0**。唯一维护源为本仓库，安装目录是发行副本；日常任务不要求每次联网更新。`local/` 不提交，导出时从公开源复制，勿直接打包整个安装目录。其他更新器是否保留本地数据需要核对，不能只依赖忽略规则。
 
-1. **对齐与讨论**：明确价值、使用过程、范围、交付和完成条件；比较现状、局部改善及其他成熟办法，处理会改变方向的问题。
-2. **执行与接续**：复用已有接口与记录，完成最简完整路径；反馈写回同一依据，进展讲清“现在能做什么、还卡在哪里”。
-3. **检查与交付**：从原始需求验实际成果，覆盖必要正常与失败场景，给可定位的证据和剩余问题。
+结构、更新保留与引用检查证明的是包可用与私有数据保护；场景演练只能说明相应样例的表现，不能证明以后所有模型和任务都会更快收敛。发布与外部变更仍需相应授权。
 
-明确的小修可以直接做。关键选择由用户决定，事实核查和授权内的常规细节由智能体承担；范围外的新功能、展示和交付物先征得同意。三步允许往返和简化，不要求每项任务建立规格书、决策表或审查仪式。
+- [验证与已知限制](docs/evidence.md)
+- [来源与设计取舍](docs/design-and-sources.md)
+- [使用示例](docs/examples.md)
+- [修订记录](CHANGELOG.md)
+- [MIT 许可](LICENSE)与[第三方说明](THIRD_PARTY_NOTICES.md)
 
-已有 Plan、规格和决定直接沿用，不重复询问或另建平行记录。用户决定与 agent 的关键取舍沿项目现有依据保存；具体落位、范围、替换和独立审计见[决策与复核](skills/agent-collaboration-guide/references/decisions-and-review.md)。
-
-协作也包括[双向校准](skills/agent-collaboration-guide/references/decisions-and-review.md#主动理解与双向校准)：从实际问题理解目标和卡点，用事实、替代与反例帮助用户补足判断，再根据反馈修正；通用方法留在技能，个人观察与待核实候选留在本地，不自动变成长期偏好。
-
-## 为什么做成 Skill
-
-Skill 提供可发现的名字、适用描述、明确调用方式和按需加载的参考材料；`AGENTS.md` 适合承载项目或长期默认约定。可以按需使用技能，也可以在项目指导中约定何时采用它。[技能机制](https://learn.chatgpt.com/docs/build-skills)、[AGENTS.md 的适用范围](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
-
-安装技能不代表每项任务都会自动采用，也不代表执行中一定遵守。它是指导方法，不能替代权限、工具审查、CI、分支保护或人的判断。代码和文档按 Agent Skills 目录形式组织；不同宿主的安装、触发和工具权限仍需分别确认。
-
-希望默认采用时，在已有项目或长期入口明确约定；采用深度按任务裁剪。怀疑未生效时分别检查入口与发现、正文读取、实际执行和结果核验，不以安装成功、改了描述或复述规则证明有效。
-
-个人设置通过用户级或项目级入口显式指定私有文件，放在技能仓库与安装目录之外。公共包只保留通用规则；个人配置单独维护，不随公共包分发，也不由技能安装更新覆盖。安装技能不意味着自动发现或读取私有文件，具体加载沿用所在宿主和入口的能力。
-
-## 与已有方法怎样配合
-
-[Spec Kit](https://github.com/github/spec-kit)、[OpenSpec](https://github.com/Fission-AI/OpenSpec) 等项目提供更丰富的规格、变更和工作流工具，也支持灵活使用。已有这类机制时，本技能沿用其任务与规格，不再另建一份事实来源。
-
-本项目的侧重点是：**帮助用户把软需求变成可判断的预期，控制实现与协作的总负担，并持续核对使用结果。** 这一组合有其用途，但不是其他方法所没有的独占能力，也没有证据支持普遍优于它们。
-
-- [经验与观点](skills/agent-collaboration-guide/references/experience.md)：形成规约的观察、解释、适用边界与待验证想法。
-- [设计取舍、来源与比较](docs/design-and-sources.md)：实际借鉴了什么、为什么这样组织。
-- [使用示例](docs/examples.md)：模糊需求、小修、分支冲突和任务接续。
-- [验证与已知限制](docs/evidence.md)：已有观察、未证明的收益及试用方式。
-- [13 条原始设计理念](skills/agent-collaboration-guide/references/principles-original.md)：保留形成背景，按需阅读。
-
-## 目录与维护
-
-```text
-skills/agent-collaboration-guide/
-├── SKILL.md                 通用方法与场景触发
-├── LICENSE                  技能独立分发时保留的许可
-├── agents/openai.yaml       Codex 界面元数据
-└── references/              按需读取的场景、经验与原始理念
-docs/                       面向使用者的说明、例子与验证边界
-```
-
-本项目最初适配自历史协作规约 **1.2.0**，该母本现已退役归档。当前技能发行 **0.6.2**，从 **0.1.0** 开始编号；此后以本仓库的技能及参考材料为唯一维护来源，安装目录是可更新的发行副本。更新时保留本地适配并核对版本，不再回写或恢复旧母本。[修订记录](CHANGELOG.md)
-
-欢迎用具体任务反馈：原始预期、智能体实际做法、发生的偏差，以及一条规则是否真正改变了行为。优先修正触发、重复和冲突；增加新条款需要说明现有要求为何不足。
-
-## 许可与致谢
-
-[MIT](LICENSE)。本项目从实际协作经验及公开方法中吸收思路，并在[来源说明](docs/design-and-sources.md)中区分概念借鉴、比较对象和分发内容；相关作者和许可见[第三方说明](THIRD_PARTY_NOTICES.md)。
+历史母本已退役。[原始理念](skills/agent-collaboration-guide/references/principles-original.md)保留为背景，不作为另一套使用入口。

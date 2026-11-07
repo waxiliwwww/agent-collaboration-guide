@@ -1,0 +1,4 @@
+/local/
+/.installation.json
+__pycache__/
+*.pyc
