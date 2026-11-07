@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Keep substantial human-agent work aligned with the user's decisions, explain mechanisms clearly, and finish the agreed scope with appropriate evidence. Use when adopted as a collaboration default or when work needs scope, decision continuity, or review; keep clear small requests lightweight.
 license: MIT
 metadata:
-  version: "0.7.0"
+  version: "0.7.1"
 ---
 
 # 协作规约
@@ -56,9 +56,9 @@ metadata:
 
 ## 越用越合适：短反馈闭环
 
-- **触发：**用户明确长期选择或更正，立即写回；同类问题重复、阶段收口或用户要求复盘时，归纳已有反馈，不要求用户重说。
+- **触发与感知：**用户明确长期选择或更正，直接落实并简短告知，不再重复确认。Agent 主动发现值得长期沿用的新经验时，在主要阶段收口或同类摩擦反复后，集中提出少量具体结论、适用范围和拟改变的做法，用简短问题确认是否准确、是否作为以后约定；不要无声升级为偏好。实际采用技能改变关键做法时就近点明，不每轮播报技能名。
 - **归属：**本次决定留任务；项目事实留项目；个人选择写私有配置；推断只作待验证观察。每项注明适用范围与状态，不把一次认可升级成普遍偏好。
-- **回用：**下一次相关任务读取有效项，让反馈改变起草、执行或检查动作。效果未知就保留未知；不自动定时复盘、索评或追加授权。
+- **回用与节制：**下一次相关任务读取有效项，让反馈改变实际动作。没有实质新经验不问，普通完成不例行总结，已确认内容不重问；同一总结未答不追问、不视为同意，也不阻塞不依赖该决定的工作。效果未知仍保留未知，不自动定时复盘、索评或追加授权。
 - **提炼：**先判定规则缺失、入口未触发、执行遗漏或检查失效，优先改已有规则。可复用、脱敏、说明边界和代价的候选才进入公共方法；维护与发布分别授权。删除被取代或已被公共方法承接的重复偏好，保留可追溯历史。
 
 反馈细则、案例如何保留和独立验证见[决定与反馈](references/decisions-and-review.md)。历史[原始理念](references/principles-original.md)与[经验来由](references/experience.md)只在需要背景时读，不是额外常驻规则。
