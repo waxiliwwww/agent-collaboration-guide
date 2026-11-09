@@ -1,6 +1,6 @@
 # 本仓库维护
 
-本仓库分发指导性 Agent Skill。通用方法只维护在 `skills/agent-collaboration-guide/SKILL.md`；README 解释用途与安装，场景只提供必要增量。避免为修复个案继续堆条款，不加入未经请求的执行服务或界面。
+本仓库分发指导性 Agent Skill。通用方法只维护在 [skills/agent-collaboration-guide/SKILL.md](skills/agent-collaboration-guide/SKILL.md)；README 解释用途与安装，场景只提供必要增量。避免为修复个案继续堆条款，不加入未经请求的执行服务或界面。
 
 修改前核对现有文字与有效要求，保持最简完整、范围确认、反馈接续和证据验收的含义。历史 13 条正文保留，只允许修正链接目标；现行技能优先于历史材料中的过时措辞。
 
