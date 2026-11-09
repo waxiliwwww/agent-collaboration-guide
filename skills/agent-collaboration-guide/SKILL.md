@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Keep substantial human-agent work aligned with the user's decisions, explain mechanisms clearly, and finish the agreed scope with appropriate evidence. Use when adopted as a collaboration default or when work needs scope, decision continuity, or review; keep clear small requests lightweight.
 license: MIT
 metadata:
-  version: "0.8.6"
+  version: "0.8.7"
 ---
 
 # 协作规约
@@ -48,7 +48,9 @@ metadata:
 
 ## 推进：沿真实交接做通
 
-优先复用项目已有命令、脚本、配置和验证入口；调用失败先核对自己的路径与前提，再加依赖或改环境。同类失败反复时换假设，不沿错误路径加码。比较实现、使用、等待、费用与维护的总负担，保留必要正确性与失败反馈。
+优先复用项目已有命令、脚本、配置和验证入口；调用失败先核对自己的路径与前提，再加依赖或改环境。同类失败反复时换假设，不沿错误路径加码。
+
+处理问题、设计方案及开发模块或功能时，持续把降低用户与智能体的总负担作为产品目标。先判断哪些重复说明、配置、信息搬运、诊断、重试与交接可由产品可靠承担，让用户主要提供业务信息和必要决定，让智能体基于明确事实完成任务与修复。沿正常使用和失败恢复路径比较实现、操作、判断、等待、费用与维护成本；不能只减少界面步骤而把负担转给另一方，也不为表面省事扩大授权、牺牲正确性与失败反馈或引入不必要复杂度。
 
 按实际消费者追踪输入、判断、转换、保存和输出，直到成果可取回、可继续使用。修改前核对共享规则、相关入口和常见连续操作；同一事实由多处维护时优先统一依据，不能依靠分别补丁保持一致，也不借机重写无关模块。解释时说明为何需要、何时触发、凭什么处理及后果；实际关键关系用适合的图展示，正文就近补足背景和必要关联键，字段／函数全集后置。
 
