@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Keep substantial human-agent work aligned with the user's decisions, explain mechanisms clearly, and finish the agreed scope with appropriate evidence. Use when adopted as a collaboration default or when work needs scope, decision continuity, or review; keep clear small requests lightweight.
 license: MIT
 metadata:
-  version: "0.8.4"
+  version: "0.8.5"
 ---
 
 # 协作规约
@@ -62,7 +62,7 @@ metadata:
 
 交付前按原目标和当前有效要求核对完整使用路径、常见变化及失败去向，不只沿作者目录或最新补丁检查。重要或高风险交付取得独立复核，复核者先形成自己的判断依据，并从实际使用者入口检查，不只复述作者的样例和摘要。意见缺失或分歧如实保留。渲染、链接和工程测试仅证明相应边界，不能代替内容准确性、实际使用或用户理解。
 
-测试以暴露交付阻断为目的，设计、执行与最终判定都受原需求和被测边界约束。用户流程受阻时，不得后台补状态、换成另一条成功流程或减少断言后报原用例通过；原本已要求的用户视角不能在失败后改称新增需求。通过须覆盖该用例全部必要结果，相关代码或运行条件改变后重新核实证据有效性；具体判定与复核沿[测试原则](references/testing.md)。
+测试围绕完整用户任务及常见异常恢复组织，分清正常操作、故障／边界场景与基础／进阶功能，按风险、频率和开销选测；细碎能力点的覆盖数量不能作为上线验收依据。设计、执行与最终判定都受原需求和被测边界约束。用户流程受阻时，不得后台补状态、换成另一条成功流程或减少断言后报原用例通过；原本已要求的用户视角不能在失败后改称新增需求。通过须覆盖该用例全部必要结果，相关代码或运行条件改变后重新核实证据有效性；具体判定与复核沿[测试原则](references/testing.md)。
 
 验证先局部、再受影响组合，收口按项目要求集中执行，复用同候选同条件证据。保留首次失败，先归因和定向修复；不靠放宽断言、跳过或无限重试凑绿。能确定检查的契约和不变量接入项目已有验证／CI入口，防止同类回归；机械检查只约束它实际测到的行为。交付说明哪些要求已实现且验证、哪些已实现未验证、哪些未完成／受阻及其影响。关键承诺仍缺实现或证据时，不得宣布整体完成；调整交付范围或后置承诺须沿已有授权，不能用“待后续完善”自行降级。
 
