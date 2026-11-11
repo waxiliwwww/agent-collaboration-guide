@@ -4,12 +4,14 @@
 
 这个技能处理这些问题。它不管你在做什么任务，只管协作过程的质量。
 
-## 用了之后，协作会有什么不同
+## 规约要求 Agent 怎样做
 
-- **不用重复背景**：已经确认的决定、已经讨论清楚的取舍，Agent 会记住并沿用，不在下轮重新问
-- **一个问题，检查同类**：你指出某处有问题，Agent 会检查其他地方有没有同样的问题，不只修你指的那一处
-- **追踪到结果，不汇报过程**：Agent 会确认成果真的可以取回和使用，而不是用"我运行了命令"代替"结果可用了"
-- **说清做了什么、没做什么**：交付时主动说明哪些验证过、哪些没有、哪些没完成，不让你猜
+- **沿用已有决定**：读取已确认的背景与取舍，条件未变不重复问。
+- **检查同类问题**：用户指出一处错误时，同时检查共享原因和相关使用路径。
+- **检查实际结果**：确认成果可以取回和使用，不以运行了命令代替结果可用。
+- **说清完成情况**：分别说明验证过、没验证和没完成的内容。
+
+这些是执行要求，不是安装后必然达到的效果；实际执行、用户理解与业务验收仍需分别核实。[已有证据及其范围](docs/evidence.md)
 
 ## 怎么用
 
@@ -31,7 +33,7 @@
 | 去套话、改进文风 | [human-writing-skills](https://github.com/whh110112/human-writing-skills) |
 | 写测试、检查测试是否有效 | [prove-it](https://github.com/nagi-studio/skills/tree/main/skills/rookie/prove-it) |
 
-更多资源见[技能与资料收藏](docs/resource-collection.md)。
+具体选用、缺失和授权处理见[技能复用](skills/agent-collaboration-guide/references/recommended-skills.md)。[技能与资料收藏](docs/resource-collection.md)仅供用户浏览，不在默认执行阅读链中。
 
 ## 安装和更新
 
@@ -49,11 +51,11 @@ python3 skills/agent-collaboration-guide/scripts/update_install.py \
 <details>
 <summary>Agent 读哪些内容</summary>
 
-宿主先把技能名称和 description 提供给 Agent。Agent 判断任务匹配后读 SKILL.md，按需跳转到对应的扩展材料，继续同一任务时已读内容沿用。
+宿主先把技能名称和 description 提供给 Agent。用户点名、默认采用或任务匹配后，Agent 按宿主约定读指定配置、SKILL.md 和项目规则，按需读取场景扩展；通用规则始终适用，继续同一任务时未变内容沿用。
 
 ```mermaid
 flowchart TD
-    A[任务开始] --> B[读 SKILL.md，沿用已有决定]
+    A[任务开始] --> B[读指定配置、SKILL.md 和项目规则]
     B --> C{需要专门方法？}
     C -- 是 --> D[按路由表读对应扩展材料]
     C -- 否 --> E[用通用三步主干完成工作]
@@ -68,7 +70,7 @@ flowchart TD
 
 | 位置 | 内容 |
 | --- | --- |
-| README | 给使用者：协作改变了什么、怎么用、安装 |
+| README | 给使用者和维护者：用途、怎么运行、安装和文件分工 |
 | [SKILL.md](skills/agent-collaboration-guide/SKILL.md) | 给 Agent：通用底线三步 + 路由表 |
 | `references/` | 写作、测试、代码、演示等专门方法，按需读取 |
 | 安装后的 `local/` | 个人选择和私有记录，不进公共仓库 |
@@ -78,6 +80,6 @@ flowchart TD
 
 ---
 
-当前版本 **0.8.14**，以 SKILL.md 元数据为准。
+当前版本 **0.8.15**，以 SKILL.md 元数据为准。
 
 [修订记录](CHANGELOG.md) · [设计与来源](docs/design-and-sources.md) · [使用示例](docs/examples.md) · [MIT 许可](LICENSE)
