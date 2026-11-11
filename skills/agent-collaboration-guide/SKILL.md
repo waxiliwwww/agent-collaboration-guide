@@ -3,30 +3,32 @@ name: agent-collaboration-guide
 description: Keep substantial human-agent work aligned with the user's decisions, explain mechanisms clearly, and finish the agreed scope with appropriate evidence. Use when adopted as a collaboration default or when work needs scope, decision continuity, or review; keep clear small requests lightweight.
 license: MIT
 metadata:
-  version: "0.8.12"
+  version: "0.8.13"
 ---
 
 # 协作规约
 
-减少用户反复补背景、纠正同类问题、等待与协调的负担。本文件是唯一使用入口：读完即可判断适用性、开始工作，并直达需要的扩展。用户当前有效要求优先；规则支持判断，不代替判断或扩大授权。
+沿用户当前有效要求完成协作任务，降低反复补背景、纠正、等待与协调的负担。本文件是 Agent 的执行入口：先判断适用性与读取范围，再沿主干推进；需要时直读场景扩展。用户当前有效要求优先，不以规则扩大授权；无需先读仓库 README 或整套参考。
 
-## 能帮什么，何时不用展开
+## 判断适用性与读取范围
 
-适用于需求讨论、技术解释、文档与演示、开发验证、修改复核和长任务接续。简单明确的小请求直接完成，不例行访谈、填表、调用其他技能或加载全部参考。它不能代替工具权限、真实执行、科学／业务验收，也不保证每次被发现或遵守。
+用于需求讨论、技术解释、文档与演示、开发验证、修改复核和长任务接续。清楚的小请求直接完成，不例行访谈、填表、调用其他技能或加载全部参考。不适用时使用更合适的方法；工具权限、真实执行和科学／业务验收须分别核实，不能以读过规约代替。
 
-开始、恢复或切换任务时，读取用户或项目指定的配置；默认配置入口是安装目录的 `local/preferences.md`，只再读其中与当前任务有关的文件。无配置而用户已采用本技能时建立该私有入口，只记录已知有效选择，不推测个人特征。已核对且未变的内容沿用。
+开始、恢复或切换任务时，沿用户或宿主指定的入口读取配置，项目规则从目标项目入口读取；默认私有配置入口为安装目录的 `local/preferences.md`，只补读其中与当前任务有关的专题。无配置而用户已采用本技能时建立该私有入口，仅记录已知有效选择，不推测个人特征。已核对且未变的内容沿用。
 
-| 当前工作 | 本技能帮助形成的结果 | 需要时直读 |
-| --- | --- | --- |
-| 讨论需求、实现或交付 | 固定本轮目标、取舍、完成条件和必要交接 | 下方主干即可；决定跨轮沿用或反馈反复时读[决定与反馈](references/decisions-and-review.md) |
-| 解释机制、写文档或研究方案 | 背景、因果、实现依据、常见变化与合适的图文表达 | [写作与解释](references/writing.md) |
-| 写测试、排查失败或验收 | 独立判据、真实边界、选测范围、失败去向 | [测试](references/testing.md)；设计人工操作任务单直接读[人工验收](references/manual-acceptance.md) |
-| 改代码、合并或提交 PR | 现有入口复用、工作树归属、保全与交付 | [代码与分支](references/code-and-branches.md) |
-| 做 PPT／演讲 | 听众主线、代表页和放映／编辑验证 | [演示](references/presentations.md)；可选 [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) 制作网页演示 |
-| 去套话、润色长文或找专用工具 | 保留事实和作者目的，判断是否需要专用技能 | 写作原则见上；执行选用及缺失处理见[技能复用](references/recommended-skills.md) |
-| 配置、更新本技能或整理偏好 | 私有配置可找到、更新保留、反馈有闭环 | [本地配置与维护](references/local-profile.md) |
+## 按当前场景补读
 
-这些参考是按需扩展，不是必经阅读顺序。入口足以判断本技能不适用时，直接采用更合适的方法；专业技能缺失时说明能力边界，不靠反复跳转试探。
+| 当前任务 | 需要时直读 |
+| --- | --- |
+| 需求、实现或交付对齐 | 下方主干；决定跨轮沿用或反馈反复时读[决定与反馈](references/decisions-and-review.md) |
+| 机制解释、文档、调研或方案 | [写作与解释](references/writing.md) |
+| 写测试、排查失败或验收 | [测试](references/testing.md)；设计人工操作任务单读[人工验收](references/manual-acceptance.md) |
+| 改代码、合并或提交 PR | [代码与分支](references/code-and-branches.md) |
+| PPT／演讲 | [演示](references/presentations.md) |
+| 选用专用技能、去套话或处理技能缺失 | [技能复用](references/recommended-skills.md)；写作本身仍沿写作扩展 |
+| 配置、更新本技能或整理偏好 | [本地配置与维护](references/local-profile.md) |
+
+这些是按需入口，不是必经顺序。选定专用技能后实际读取其入口并复用能力，不重开已完成的对齐；缺失与冲突按技能复用入口处理，不靠反复跳转试探。不默认读取面向用户的资源收藏、设计历史或全部扩展。
 
 ## 开始：先形成完整骨架
 
