@@ -10,6 +10,8 @@
 
 ## 概念参考与比较材料
 
+- **human-writing-skills**：已读取[公开技能入口](https://github.com/whh110112/human-writing-skills)与适用于技术说明、重写保真的相关模块，参考其明确读者、删除空泛重复及核对原意的编辑方法。公开包仅保留链接和独立说明，不分发其技能正文、CLI 或插件，不以阅读说明冒充安装或效果认证。
+
 - **prove-it**：测试有效性和证据交付的方法参考，现已核对 [nagi-studio/skills 的公开入口](https://github.com/nagi-studio/skills/tree/main/skills/rookie/prove-it)。本公开版只链接并以独立措辞说明选用边界，不分发该技能原文、代码或模板，不将外部版本或许可视为已永久核实。
 
 - **Matt Pocock / skills — grill-with-docs**：访谈与术语建模思路。原始参考版本为 [`49dd158d1076134a641b33efb035946536778336`](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/engineering/grill-with-docs)，原项目为 [MIT](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/LICENSE)，Copyright (c) 2026 Matt Pocock。既有使用环境中对该技能的本地改良不作为本公开包的运行依赖。

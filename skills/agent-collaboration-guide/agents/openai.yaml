@@ -1,4 +1,4 @@
 interface:
   display_name: "协作规约"
-  short_description: "固定目标与决定，讲通机制和交接，按需扩展并从反馈中改进"
-  default_prompt: "请使用 $agent-collaboration-guide 沿用已有决定与计划，补齐必要问题，按已确认范围推进并核验结果。"
+  short_description: "帮助 Agent 记住已有决定，主动查漏并完成任务，说明检查结果"
+  default_prompt: "请使用 $agent-collaboration-guide，先理解这次目标，沿用已有决定，自己查漏并完成工作；重要取舍先说明影响和选项。"

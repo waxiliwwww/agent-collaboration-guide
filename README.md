@@ -1,74 +1,79 @@
-# 协作规约（Agent Collaboration Guide）
+# 协作规约
 
-一个面向人机协作的 Agent Skill：让 Agent 沿用已经确定的目标与决定，主动补足必要场景、完成关联交接，并拿实际证据说明交付状态；用户保有方向和重要取舍的控制权。适合需求讨论、长任务接续、技术解释、开发验证与结果复核，清楚的小请求直接完成。
+给 Agent 用的一套协作约定，适合开发、写文档、做演示和需要多轮完成的任务。
 
-这份 README 面向准备使用或维护规约的人，介绍用途、运行逻辑和维护分工。给 Agent 执行的规则维护在 [SKILL.md](skills/agent-collaboration-guide/SKILL.md)；两份文档描述同一套逻辑，README 不复制整套执行条款。
+它主要管几件容易出错的事：已经确定的做法，下次继续时要记得；用户指出一个问题，Agent 要检查其他地方有没有同类问题；改动涉及多个模块，要做到用户能实际使用；准备交付时，要说清做了什么、检查过什么、还有什么没完成。已有功能的明确缺陷直接修；新增未授权的功能或出现未确认的重要取舍时，先让用户决定。
 
-## 怎样开始使用
+这份 README 帮你了解怎么用，也说明后续修改应该放在哪里。Agent 执行时读的是 [SKILL.md](skills/agent-collaboration-guide/SKILL.md)。
 
-安装后，可以在任务中点名 `agent-collaboration-guide`。希望默认采用时，在宿主支持的用户／项目入口中明确约定；本机偏好与项目规则从各自指定入口读取，不依赖 Agent 每次猜中描述。
+## 怎么用
 
-先提供目标、已有材料与确定的限制即可，不必先替 Agent 拆完所有常规步骤。Agent 应自行梳理完成条件、查明事实并推进授权内工作；涉及未确认的重要取舍才说明影响与选项，已确认且条件未变的内容直接沿用。准确边界见 [执行入口](skills/agent-collaboration-guide/SKILL.md#开始先形成完整骨架)。
+安装后，在任务里加一句：
 
-## 一次任务怎样运行
+> 请按 agent-collaboration-guide 协作，帮我完成……
 
-宿主通常先向 Agent 提供技能名称和描述，Agent 根据请求匹配，或按用户点名、已采用的默认协作约定使用技能。随后由 Agent 读取文件、选择工具并执行；本仓库提供指导，不包含自动调度或运行时强制服务。
+你也可以在宿主的用户或项目配置里把它设为默认技能。开始时给出目标、材料和已知限制即可，Agent 应自己查资料、找遗漏、安排必要工作。清楚的小事直接做；已有决定不重复问，尚未授权的新功能、使用方式或重要取舍才需要你判断。
+
+## Agent 会读哪些内容
+
+宿主会先把技能名称和 description 提供给 Agent。Agent 判断任务匹配，或收到用户点名、默认采用的约定后，再读技能正文；不是看到一个关键词就必定执行。
 
 ```mermaid
 flowchart TD
-    A[任务匹配、用户点名或默认协作约定] --> B[沿宿主入口读取配置、项目规则与 SKILL.md]
-    B --> C[沿用目标与决定，形成范围和完成依据]
-    C --> D[只读当前场景需要的扩展]
-    D --> E[复用匹配的现成技能、工具及项目入口]
-    E --> F[实施、核验并说明实际交付状态]
+    A[任务匹配、用户点名或默认采用] --> B[读取 SKILL.md、指定配置和项目规则]
+    B --> C[弄清目标，沿用已有决定]
+    C --> D[需要写作、测试等方法时，读对应参考]
+    D --> E[使用合适的工具或现成技能完成工作]
+    E --> F[检查结果，说明完成情况]
 ```
 
-指定的宿主入口可以要求先读本机配置，再核对 `SKILL.md`；项目事实与约束从目标项目入口读取。场景扩展只补当前任务需要的内容，已经核对且未变的资料沿用，不要求每轮读取全部文件。
+具体先读哪份配置，按宿主入口约定。例如入口要求先读本机偏好，就先读它。项目规则从项目自己的入口读取，参考文档只读当前需要的部分。继续同一任务时，没变的内容不用再读一遍。
 
-例如制作网页演示时，用现成制作技能的模板和脚本，本规约补受众、目标、重要取舍及验收衔接；设计测试或复核反复问题时，选用适配的测试与证据技能。具体选用维护在[技能复用入口](skills/agent-collaboration-guide/references/recommended-skills.md)，不在这里复制另一份技能清单。缺少匹配技能且确有收益时，建议具体安装；没有安装授权不擅自安装，现有工具足够时直接完成。
+做完后，Agent 根据你的反馈修正成果。你明确要求以后沿用的选择，记入本机配置；只针对这次的要求，留在当前任务。一次夸奖不代表所有内容都已验收，也不自动成为长期偏好。
 
-交付时区分已实现、已验证、未完成及其影响；后续反馈融回相应任务、项目或个人选择。一次认可不自动变成全部验收或长期偏好，没有新信息不例行提问。
+这套指导依靠 Agent 阅读和执行。安装成功不保证每次都会正确使用，检查过文件和链接也不代表真实任务已经通过验收。[已有验证及其限制](docs/evidence.md)
 
-不同宿主的发现、默认采用和权限行为可能不同；名称描述、文件存在或安装成功都不保证每次正确触发与执行。结构检查、运行验证、用户理解与业务验收分别说明，效果边界见[现有证据](docs/evidence.md)。
+## 有现成技能就先用
 
-## 文件分别给谁读
+制作和检查方法优先用已有技能，协作规约负责记住你的要求、处理重要决定，以及检查最后是否做完。
 
-| 文件／位置 | 主要读者 | 负责什么 |
-| --- | --- | --- |
-| 本 README | 使用者与维护者 | 了解用途、运行过程、安装和维护分工 |
-| [SKILL.md](skills/agent-collaboration-guide/SKILL.md) | 执行任务的 Agent | 适用判断、读取范围、通用执行规则与场景路由；执行规则的统一入口 |
-| `skills/agent-collaboration-guide/references/` | 当前场景中的 Agent；按需查阅的维护者 | 写作、测试、代码、演示等场景增量，不是必读全套流程 |
-| 安装目录的 `local/` | 当前用户与处理相关任务的 Agent | 个人选择、项目约定和私有历史；不随公共仓库发布 |
-| [技能与资料收藏](docs/resource-collection.md) | 想浏览、比较资源的用户 | 仅供收藏与自行选择，不参与默认执行阅读链 |
-| `docs/` 中的设计、证据与示例 | 维护者及需要追查依据的使用者 | 来源、设计取舍、验证范围与案例，不充当另一套执行规范 |
+| 要做的事 | 先看什么 |
+| --- | --- |
+| 制作网页 PPT | [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)，直接使用它的模板和脚本；需要可编辑 PPTX 时选具备该能力的技能，例如 `ppt-master` |
+| 去套话、改进文风 | [human-writing-skills](https://github.com/whh110112/human-writing-skills)，选择适合技术说明或报告的模块，保留原文事实和约束 |
+| 写测试、检查测试是否有效、处理反复出现的错误 | [prove-it](https://github.com/nagi-studio/skills/tree/main/skills/rookie/prove-it)，使用适合当前任务的通过标准和检查方法 |
 
-## 安装与更新
+Agent 应先读选定技能的说明，再实际使用其中的方法。没安装就如实说明；需要安装时给出具体建议，按已有授权处理，不把整个技能集合一次装上。已确定的目标、样稿和测试结果直接继续用，不因为换技能再问一遍。详细用法见[技能复用](skills/agent-collaboration-guide/references/recommended-skills.md)。
 
-把仓库里的 `skills/agent-collaboration-guide` 目录安装到宿主的技能目录；Codex 可用 `skill-installer` 从本仓库安装。已有安装时使用下列保留流程，不先删除整个安装目录。
+[技能与资料收藏](docs/resource-collection.md)是单独给你浏览的清单，包含更多发现入口。它不要求 Agent 在每次任务前通读。
 
-从仓库运行：
+## 安装和更新
+
+将仓库中的 `skills/agent-collaboration-guide` 安装到宿主的技能目录；Codex 可以使用 `skill-installer`。已有安装时，从仓库运行更新器：
 
 ```bash
 python3 skills/agent-collaboration-guide/scripts/update_install.py \
   skills/agent-collaboration-guide /path/to/skills/agent-collaboration-guide --init-local
 ```
 
-加 `--dry-run` 先核对公共文件目的地；`--init-local` 仅在缺少 `local/preferences.md` 时建立入口。已有私有目录不会被读取或覆盖，更新器不删除目标目录里的其他内容。此保证仅适用于本更新流程；其他安装器先核对保留行为，必要时备份。
+更新器只复制公共文件，保留目标目录中的 `local/`。`--init-local` 只在缺少 `local/preferences.md` 时创建入口；加 `--dry-run` 可先检查目的地。其他安装器不一定保留私人文件，使用前要核对，必要时备份。
 
-配置也可放在宿主或项目已指定的位置；不为统一目录擅自搬动资料。迁移和多宿主入口见[本地配置与维护](skills/agent-collaboration-guide/references/local-profile.md)。
+## 文件怎么分工，后续怎么改
 
-## 后续怎样维护
+| 位置 | 内容与读者 |
+| --- | --- |
+| README | 给使用者和维护者看：用途、使用过程、安装和维护 |
+| [SKILL.md](skills/agent-collaboration-guide/SKILL.md) | 给 Agent 执行：何时使用、先读什么、做事时遵守哪些规则 |
+| `references/` | Agent 需要时再读的写作、测试、代码、演示等方法 |
+| 安装后的 `local/` | 个人选择、项目定位和私有记录；不进公共仓库或发布包 |
+| `docs/` | 供查阅的收藏、例子、设计来源和验证记录 |
 
-通用执行规则改 `SKILL.md`，仅特定场景需要的细节改已有扩展，并保持路由能找到；个人选择与私有上下文留本机配置，项目事实和约束以目标项目入口为准，不另复制一份真源。README 维护读者理解所需的运行模型和文件分工，不重复列全部执行条款。改变触发、读取、复用、反馈或验收逻辑时，同步审视 README 的说明与实际执行入口，不能让介绍与规则各自演进。
+所有任务都用得到的规则改在 SKILL.md，只有某类任务需要的细节放对应参考。个人选择留在本机，项目事实和规则以项目自己的文档为准。改变技能触发、读取、复用或验收方式时，同时核对 README 的说明，避免介绍和实际规则说两套话。
 
-清楚的小修不扩成流程重构；较大修订按原始用户要求复核，同时检查遗漏、越权、重复确认和维护负担。验证范围、版本与未验证部分如实记录，不用规则数量或审阅通过声称长期效果已获证明。
+公开打包从仓库中的公共目录导出，不直接打包整个已安装目录。配置迁移和多宿主使用见[本地配置与维护](skills/agent-collaboration-guide/references/local-profile.md)。
 
-当前版本 **0.8.13**，以 SKILL.md 元数据为准。本仓库是维护源，安装目录是发行副本，日常使用不必每次联网更新。`local/` 与私有历史不提交或打入公共包；导出从公共源进行，不直接打包整个已安装目录。
+当前版本 **0.8.14**，以 SKILL.md 元数据为准。仓库是维护源，本机安装是副本，不必每次任务都联网更新。
 
-- [修订记录](CHANGELOG.md)
-- [验证与已知限制](docs/evidence.md)
-- [来源与设计取舍](docs/design-and-sources.md)
-- [使用示例](docs/examples.md)
-- [MIT 许可](LICENSE) 与[第三方说明](THIRD_PARTY_NOTICES.md)
+[修订记录](CHANGELOG.md) · [设计与来源](docs/design-and-sources.md) · [使用示例](docs/examples.md) · [MIT 许可](LICENSE) · [第三方说明](THIRD_PARTY_NOTICES.md)
 
-更早的协作母本已退役；[原始理念](skills/agent-collaboration-guide/references/principles-original.md)仅作历史背景，不作为另一套入口。
+早期[原始理念](skills/agent-collaboration-guide/references/principles-original.md)保留作历史资料，不作为另一套现行规则。
