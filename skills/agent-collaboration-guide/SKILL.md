@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Keep substantial human-agent work aligned with the user's decisions, explain mechanisms clearly, and finish the agreed scope with appropriate evidence. Use when adopted as a collaboration default or when work needs scope, decision continuity, or review; keep clear small requests lightweight.
 license: MIT
 metadata:
-  version: "0.8.10"
+  version: "0.8.11"
 ---
 
 # 协作规约
@@ -33,6 +33,8 @@ metadata:
 沿用原始目标、Plan、决定与认可内容，核对当前材料和项目入口；后续反馈默认补充或纠正当前工作，不自动把整体交付改成最新一批问题。先想清完成后用户从哪里开始、做什么、看到并取回什么。用户目标已清楚时，由 Agent 梳理职责、必要组合和完成判据。把用户提出的实现思路作为设计输入，主动检查关键假设、遗漏场景、模块交接和失败恢复；用具体影响说明发现的问题并提出改法。授权内必要的补全直接落实，改变目标、权限、数据边界或重要成本的取舍先确认。重要未知才询问，不让用户重新拆解本可自行识别的常规完整性。
 
 完整骨架应覆盖当前有效要求与常见关联条件。用户要求成品、成熟或稳定可用时，先将其落实为明确的交付对象、支持边界、主要使用路径和完成判据；不得自行降为固定样例或逐项修补，也不扩成用户未承诺的无限功能。最简单路径用于建立理解或尽早跑通，不能充当整个交付；名称和承诺须与实际覆盖一致。
+
+实质操作前，沿实际路径评估风险与开销：影响范围与失败后果，以及数据规模、耗时、内存／I/O、调用费用和并发／重试的放大。按影响确定必要的预算、停止／取消、恢复和验证办法；关键上界不明时先做小规模核查，不等用户提醒或实现后才评估。简单低影响操作简短判断即可，不例行填表或逐项请示；重要取舍沿下文确认。
 
 新工作简述目标、主路径、关键取舍与完成条件。以已确认需求、契约和用户路径区分修复与扩展：授权内恢复已有预期行为的明确缺陷、同类问题及必要关联修复，自主完成并验证；常规内部调整不逐项请示。原已承诺的正常使用路径与合法输入支持不能因实现遗漏而被称为新增需求。
 
