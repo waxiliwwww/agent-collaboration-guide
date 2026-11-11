@@ -28,7 +28,7 @@
 | [Kiro Specs](https://kiro.dev/docs/specs/) | 需求、设计、实施计划之间的联系 | 保留各自用途，文档数量按任务深度决定；这是公开产品文档参考，不称为复制开源代码 |
 | [Diátaxis](https://diataxis.fr/) | 按读者需要区分教程、操作指南、参考与解释 | 人读 README、智能体读技能、场景按需展开；不把四种文档形式变成每项任务的必填目录 |
 | [arc42](https://arc42.org/overview/) | 架构的目标、约束、上下文、运行视角、决定与风险 | 设计解释正常过程、关键交接和取舍；按需借鉴，不照搬十二节模板 |
-| `prove-it`（维护者提供的本地技能） | 证据交付、反例验证，识别用替身替掉目标能力、照抄输出与绑定内部写法的测试 | 用独立措辞概括方法，按风险和执行、准备、调用、维护成本选用，不强制每次小改加测试或截图 |
+| [`prove-it`](https://github.com/nagi-studio/skills/tree/main/skills/rookie/prove-it)（已核对公开入口） | 证据交付、反例验证，识别用替身替掉目标能力、照抄输出与绑定内部写法的测试 | 用独立措辞概括方法，按风险和执行、准备、调用、维护成本选用，不强制每次小改加测试或截图 |
 | [Agent Skills](https://agentskills.io/specification) 与 [OpenAI 技能说明](https://learn.chatgpt.com/docs/build-skills) | `SKILL.md` 元数据、按需读取与参考目录 | 使用标准技能形式，只保留本技能实际需要的文件；没有附加运行服务 |
 
 本轮是根据这些一手材料所作的方法比较，不是同任务、同资源的产品效果排名。Spec Kit 和 OpenSpec 也支持灵活迭代，不能以“其他工具都僵化”作为本项目优势。

@@ -18,4 +18,4 @@ PPT 围绕听众要理解和判断的事组织。通用讨论、授权与检查�
 
 ## 按产物选择制作工具
 
-单文件网页演示可选 [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)，原生可编辑 PPTX 选择具有相应能力的制作技能；外部资源说明见[推荐扩展](recommended-skills.md)。不为普通说明文档自动套演示模板，选了技能也不重复已完成的内容对齐。
+单文件网页演示优先复用当前可用的 `guizang-ppt-skill` 模板和制作流程，原生可编辑 PPTX 选 `ppt-master` 等具有相应能力的技能；具体选用与缺失处理见[技能复用](recommended-skills.md)。不为普通说明文档自动套演示模板，选了技能也不重复已完成的内容对齐。

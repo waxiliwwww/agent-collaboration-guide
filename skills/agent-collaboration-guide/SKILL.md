@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: Keep substantial human-agent work aligned with the user's decisions, explain mechanisms clearly, and finish the agreed scope with appropriate evidence. Use when adopted as a collaboration default or when work needs scope, decision continuity, or review; keep clear small requests lightweight.
 license: MIT
 metadata:
-  version: "0.8.11"
+  version: "0.8.12"
 ---
 
 # 协作规约
@@ -23,7 +23,7 @@ metadata:
 | 写测试、排查失败或验收 | 独立判据、真实边界、选测范围、失败去向 | [测试](references/testing.md)；设计人工操作任务单直接读[人工验收](references/manual-acceptance.md) |
 | 改代码、合并或提交 PR | 现有入口复用、工作树归属、保全与交付 | [代码与分支](references/code-and-branches.md) |
 | 做 PPT／演讲 | 听众主线、代表页和放映／编辑验证 | [演示](references/presentations.md)；可选 [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) 制作网页演示 |
-| 去套话、润色长文或找专用工具 | 保留事实和作者目的，判断是否需要专用技能 | 写作原则见上；候选资源及使用边界见[推荐扩展](references/recommended-skills.md) |
+| 去套话、润色长文或找专用工具 | 保留事实和作者目的，判断是否需要专用技能 | 写作原则见上；执行选用及缺失处理见[技能复用](references/recommended-skills.md) |
 | 配置、更新本技能或整理偏好 | 私有配置可找到、更新保留、反馈有闭环 | [本地配置与维护](references/local-profile.md) |
 
 这些参考是按需扩展，不是必经阅读顺序。入口足以判断本技能不适用时，直接采用更合适的方法；专业技能缺失时说明能力边界，不靠反复跳转试探。
@@ -52,7 +52,7 @@ metadata:
 
 ## 推进：沿真实交接做通
 
-优先复用项目已有命令、脚本、配置和验证入口；调用失败先核对自己的路径与前提，再加依赖或改环境。同类失败反复时换假设，不沿错误路径加码。
+先核对现有工具与技能是否适合当前任务；匹配时读取其入口，实际复用模板、脚本或方法，只补本任务缺口，不重复自建同类流程。按场景的选用与缺失处理见[技能复用](references/recommended-skills.md)，无匹配时直接使用合适工具，不为调用而调用。优先复用项目已有命令、脚本、配置和验证入口；调用失败先核对自己的路径与前提，再加依赖或改环境。同类失败反复时换假设，不沿错误路径加码。
 
 处理问题、设计方案及开发模块或功能时，持续把降低用户与智能体的总负担作为产品目标。先判断哪些重复说明、配置、信息搬运、诊断、重试与交接可由产品可靠承担，让用户主要提供业务信息和必要决定，让智能体基于明确事实完成任务与修复。沿正常使用和失败恢复路径比较实现、操作、判断、等待、费用与维护成本；不能只减少界面步骤而把负担转给另一方，也不为表面省事扩大授权、牺牲正确性与失败反馈或引入不必要复杂度。
 
