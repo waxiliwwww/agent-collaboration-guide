@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: 守住人机协作的基本质量底线：记住已确认决定，主动查漏，追踪到结果可取回，交付前说清完成情况。适用于任何需要多步推进或跨轮接续的工作；简单明确的小事直接完成，不例行追问。
 license: MIT
 metadata:
-  version: "0.8.15"
+  version: "0.8.16"
 ---
 
 # 协作规约
@@ -23,6 +23,7 @@ metadata:
 | 当前工作 | 去哪里找方法 |
 | --- | --- |
 | 解释机制、写文档或研究方案 | [写作与解释](references/writing.md) |
+| 审查或精简已有内容，处理冗余、冲突和理解障碍 | [内容取舍与逻辑审查](references/content-review.md) |
 | 写测试、排查失败或验收交付 | [测试](references/testing.md) |
 | 人工操作任务单或现场验收 | [人工验收](references/manual-acceptance.md) |
 | 改代码、合并分支或提交 PR | [代码与分支](references/code-and-branches.md) |
