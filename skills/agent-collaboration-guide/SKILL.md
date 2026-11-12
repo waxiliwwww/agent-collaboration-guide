@@ -3,7 +3,7 @@ name: agent-collaboration-guide
 description: 守住人机协作的基本质量底线：记住已确认决定，主动查漏，追踪到结果可取回，交付前说清完成情况。适用于任何需要多步推进或跨轮接续的工作；简单明确的小事直接完成，不例行追问。
 license: MIT
 metadata:
-  version: "0.8.17"
+  version: "0.8.19"
 ---
 
 # 协作规约
