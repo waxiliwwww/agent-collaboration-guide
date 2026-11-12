@@ -80,6 +80,6 @@ flowchart TD
 
 ---
 
-当前版本 **0.8.16**，以 SKILL.md 元数据为准。
+当前版本 **0.8.17**，以 SKILL.md 元数据为准。
 
 [修订记录](CHANGELOG.md) · [设计与来源](docs/design-and-sources.md) · [使用示例](docs/examples.md) · [MIT 许可](LICENSE)
